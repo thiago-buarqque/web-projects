@@ -1,0 +1,10 @@
+@font-face {
+	font-family: GothamRoundedBook;
+	src: url("./gotham-rounded-book.otf") format("opentype");
+}
+
+@font-face {
+	font-family: GothamRoundedBold;
+	font-weight: bold;
+	src: url("./gotham-rounded-bold.otf") format("opentype");
+}

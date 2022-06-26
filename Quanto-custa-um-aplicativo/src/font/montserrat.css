@@ -1,0 +1,22 @@
+@font-face {
+    font-family:Montserrat;
+    src:url('./Montserrat-ExtraLight.0db10313.otf') format("opentype");
+    font-weight:100;
+    font-style:normal;
+    font-display:swap
+   }
+   @font-face {
+    font-family:Montserrat;
+    src:url('./Montserrat-Light.2321dc98.otf') format("opentype");
+    font-weight:300;
+    font-style:normal;
+    font-display:swap
+   }
+   @font-face {
+    font-family:Montserrat;
+    src:url('./Montserrat-Medium.8193d262.otf') format("opentype");
+    font-weight:500;
+    font-style:normal;
+    font-display:swap
+   }
+   

@@ -1,0 +1,186 @@
+div#client_company_info_container form {
+  width: 100%;
+}
+
+@media screen and (min-width: 680px) {
+  div#client_company_info_container form div#form_fields {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: calc(50% - 18px) calc(50% - 18px);
+        grid-template-columns: calc(50% - 18px) calc(50% - 18px);
+    -webkit-column-gap: 36px;
+            column-gap: 36px;
+  }
+}
+
+div#client_company_info_container form div#form_fields div._form_item {
+  margin: 16px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  div#client_company_info_container form div#form_fields div._form_item {
+    margin: 4px 0 0 0;
+    height: 94px;
+  }
+}
+
+div#client_company_info_container form div#form_fields div._form_item .form_field {
+  padding-top: 16px;
+}
+
+div#form_fields div#field__phone_number div#phone_number_content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
+
+div#form_fields div#field__phone_number div#phone_number_content div#countries_flags {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 16px 8px 0 8px;
+}
+
+div#form_fields div#field__phone_number div#phone_number_content div#countries_flags img {
+  width: 20px;
+}
+
+div#form_fields div#field__phone_number div#phone_number_content div#countries_flags span {
+  color: #666;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  margin-left: 4px;
+}
+
+div#form_fields div#field__phone_number div#phone_number_content .form_field {
+  width: 100%;
+}
+
+div#form_fields div#select_job_position {
+  margin-bottom: 8px;
+}
+
+div#form_fields div#select_job_position span#required_field {
+  font-size: 12px !important;
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  div#form_fields div#select_job_position span#required_field {
+    font-size: 14px;
+  }
+}
+
+div#form_fields div#select_job_position div.select {
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  margin-top: 16px;
+  height: 22px;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+div#form_fields div#select_job_position div.select div._current_option {
+  width: 100%;
+  color: #333;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div#form_fields div#select_job_position div.select div._current_option div#option_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+div#form_fields div#select_job_position div.select div._current_option div#option_container input[type="text"] {
+  width: 100%;
+  padding: 0;
+  border-bottom: 0;
+  pointer-events: none;
+  font-size: 16px !important;
+}
+
+div#form_fields div#select_job_position div.select div._current_option span#_dropdown_symbol {
+  -webkit-transform: scaleY(0.5) !important;
+          transform: scaleY(0.5) !important;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+div#form_fields div#select_job_position div.select div._options {
+  opacity: 0;
+  width: 100%;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+  pointer-events: none;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid transparent !important;
+  padding: 4px 0;
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+div#form_fields div#select_job_position div.select div._options div._option {
+  padding: 8px 16px;
+  color: #333;
+}
+
+div#form_fields div#select_job_position div.select div._options div._option:hover {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.opened_dropdown_current_option span {
+  opacity: 0.45 !important;
+}
+
+.opened_dropdown_current_option div._options {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+.opened_dropdown_current_option::after {
+  content: "";
+  width: calc(100% - 16px);
+  height: 1px;
+  background: #4a90e2;
+  position: absolute;
+  bottom: 0;
+  opacity: 1 !important;
+}

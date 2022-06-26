@@ -1,0 +1,194 @@
+div#game_finish {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+
+    @include row_flex_center;
+
+    transition: all 0.75s cubic-bezier(0.55, 0.09, 0.68, 0.53) !important;
+
+    div#__content {
+        width: 380px;
+        min-height: 456px;
+        background: var(--bg-color);
+        border-radius: 15px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+        transition: all 0.75s cubic-bezier(0.55, 0.09, 0.68, 0.53) !important;
+
+        opacity: 0;
+        transform: translateY(15%);
+
+        padding: 24px 0;
+
+        @media screen and (min-width: $desktop-screen-size) {
+            height: auto;
+            padding: 24px;
+            min-width: 420px;
+        }
+
+        div#__congrats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            svg#confetti {
+                path:nth-child(1),
+                path:nth-child(3),
+                path:nth-child(5) {
+                    stroke: var(--normal-text-color);
+                }
+            }
+
+            svg#sad {
+                path {
+                    stroke: var(--normal-text-color);
+                }
+                path:nth-child(3),
+                path:nth-child(5) {
+                    fill: var(--normal-text-color);
+                }
+                path:nth-child(4),
+                path:nth-child(6) {
+                    stroke: var(--adaptable-main-color);
+                }
+            }
+
+            p#__congrats_title {
+                font-size: 28px;
+                font-weight: 500;
+                margin-top: 16px;
+                margin-bottom: 8px;
+
+                @media screen and (min-width: $desktop-screen-size) {
+                    font-size: 32px;
+                }
+            }
+            span#__congrats_msg {
+                font-size: 14px;
+                margin-bottom: 16px;
+                @media screen and (min-width: $desktop-screen-size) {
+                    font-size: 16px;
+                }
+            }
+
+            span#__match_time {
+                font-weight: 500;
+            }
+        }
+
+        div#__options {
+            width: 100%;
+            max-width: 230px;
+
+            button.__menu_option {
+                width: 100%;
+                min-height: 40px;
+                padding: 8px 0;
+
+                border-radius: 10px;
+
+                transition: all 0.1s ease-in-out;
+
+                margin: 24px auto 16px auto;
+
+                background-color: var(--main-color);
+
+                @media screen and (min-width: $desktop-screen-size) {
+                    height: 50px;
+                }
+
+                span {
+                    color: var(--hightlighted-item-text-color);
+                    font-weight: 500;
+                    font-size: 16px;
+                    text-align: center;
+                    @media screen and (min-width: $desktop-screen-size) {
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+            span#rematch_flag {
+                text-align: center;
+                display: block;
+                text-align: 14px;
+                margin-bottom: 24px;
+            }
+
+            button#__return_to_menu {
+                margin-top: 48px;
+                width: 100%;
+                height: 40px;
+                border: 1px solid #d1d1d1;
+                border-radius: 10px;
+
+                text-align: center;
+
+                position: relative;
+                font-size: 16px;
+
+                @media screen and (min-width: $desktop-screen-size) {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    background-color: rgba(217, 217, 217, 0.25);
+                }
+
+                svg {
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    left: 12px;
+                    top: calc(50% - 9px);
+
+                    @media screen and (min-width: $desktop-screen-size) {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    path {
+                        stroke: var(--normal-text-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.__show_game_end_screen {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    pointer-events: all !important;
+
+    div#__content {
+        opacity: 1 !important;
+        transform: translateY(0%) !important;
+    }
+}
+
+.__hide_game_end_screen {
+    pointer-events: none !important;
+    background-color: transparent !important;
+
+    div#__content {
+        opacity: 0 !important;
+        transform: translateY(15%) !important;
+    }
+}

@@ -1,0 +1,126 @@
+@import "../../../sass/_mixins.scss";
+@import "../../../sass/variables.scss";
+
+div#client_needs {
+	width: 100%;
+	z-index: 1;
+
+	@media screen and (min-width: $desktop_size) {
+		background: rgb(238, 244, 252);
+		background: linear-gradient(
+			180deg,
+			rgba(238, 244, 252, 1) 0%,
+			rgba(238, 244, 252, 1) 60%,
+			rgba(255, 255, 255, 1) 60%
+		);
+
+		img#_img_woman {
+			position: absolute;
+			right: 20px;
+			top: calc(50% - 120px);
+			width: 120px;
+		}
+
+		img#_img_phone_man {
+			position: absolute;
+			left: 20px;
+			top: calc(50% - 60px);
+			width: 130px;
+		}
+	}
+
+	div#__top_container {
+		width: 100%;
+		max-width: 940px;
+		margin: 0 auto;
+
+		@media screen and (min-width: $desktop_size) {
+			margin-bottom: 48px;
+		}
+
+		div#__animated_text_container {
+			width: 100%;
+			max-width: 680px;
+			height: 30vh;
+			max-height: 300px;
+
+			margin: 16px auto 0 auto;
+
+			color: #415b5c;
+
+			border-radius: 5px;
+
+			@media screen and (min-width: $desktop_size) {
+				background: #fff;
+				padding: 16px;
+				p.user_needs_console_text {
+					font-size: 18px;
+				}
+				max-height: 150px;
+			}
+		}
+	}
+
+	div#_questions {
+		margin-top: 24px;
+		width: 300%;
+
+		@include flex($align-items: flex-start, $justify-content: space-between);
+
+		transition: transform 1s ease-out;
+
+		@media screen and (min-width: $desktop_size) {
+			margin-top: 64px;
+		}
+
+		div.client_needs_question {
+			width: 33.33%;
+
+			text-align: center;
+
+			span._main_text {
+				@media screen and (min-width: $large_mobile_size) {
+					font-size: 18px;
+				}
+			}
+
+			div.__options {
+				width: 100%;
+
+				margin-top: 8px;
+
+				@include flex($align-items: center, $justify-content: center, $wrap: wrap);
+
+				@media screen and (min-width: $desktop_size) {
+					margin-top: 16px;
+				}
+
+				button.__option {
+					flex-basis: calc((100% - 16px) / 2);
+					margin: 8px;
+					max-width: 160px;
+
+					&:hover {
+						font-weight: 300 !important;
+					}
+
+					@media screen and (min-width: $large_mobile_size) {
+						font-size: 16px;
+						padding: 0 8px;
+					}
+					@media screen and (min-width: $desktop_size) {
+						max-width: 200px;
+						font-size: 18px;
+					}
+				}
+
+				button.__option:nth-child(even) {
+					margin-right: 0;
+				}
+				button.__option:nth-child(odd) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}

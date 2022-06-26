@@ -1,0 +1,55 @@
+main {
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main #home_img {
+  max-width: 400px;
+  max-height: 30vh;
+}
+
+main #home_main_text {
+  font-size: 28px;
+  font-family: "GothamRoundedBold";
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 680px) {
+  main #home_main_text {
+    font-size: 50px;
+  }
+}
+
+main #home_description {
+  line-height: 1.3;
+}
+
+main #btn_start {
+  min-width: 180px;
+  height: 70px;
+}
+
+@media screen and (min-width: 680px) {
+  main #btn_start {
+    min-width: 220px;
+    height: 80px;
+    font-size: 24px;
+  }
+}

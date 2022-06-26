@@ -1,0 +1,134 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/variables.scss";
+section.question {
+	width: 100%;
+	height: 100%;
+	max-width: 960px;
+
+	position: relative;
+
+	@include flexCenter($direction: column);
+
+	text-align: center;
+
+	margin: 0 auto;
+
+	.question_title {
+		font-family: "GothamRoundedBold";
+		font-size: 20px;
+		width: 100%;
+
+		line-height: 1.5;
+
+		@media screen and (min-width: $large_mobile_size) {
+			font-size: 32px;
+		}
+	}
+
+	div.question_body {
+		div.question_answers_container {
+			width: 100%;
+
+			@include flexCenter($direction: column);
+
+			padding: 0 8px;
+			margin-top: 8px;
+
+			@media screen and (min-width: $medium_mobile_size) {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			@media screen and (min-width: $desktop_size) {
+				flex-direction: row;
+				flex-wrap: nowrap;
+			}
+
+			div.answer {
+				width: 100%;
+
+				@include flex($align-items: center, $justify-content: flex-start);
+
+				background: #64615d;
+
+				border: 2px solid #64615d;
+				padding: 8px 22px;
+				margin: 8px 0px;
+				border-radius: 3px;
+
+				position: relative;
+				cursor: pointer;
+
+				transition: all 0.3s ease-out;
+
+				@media screen and (min-width: $medium_mobile_size) {
+					box-sizing: border-box;
+					background: transparent;
+
+					border: 2px solid transparent;
+
+					&:hover,
+					&:active {
+						background: rgb(81, 77, 74);
+						transform: translateY(-8px);
+					}
+				}
+
+				@media screen and (min-width: $large_mobile_size) {
+					margin: 8px;
+					flex-basis: calc((100% / 2) - 16px);
+				}
+
+				@media screen and (min-width: $desktop_size) {
+					flex-direction: column;
+					justify-content: center;
+
+					margin: 8px;
+					flex-basis: calc((100% / 4) - 8px);
+				}
+
+				img.question_image {
+					width: 60px;
+					pointer-events: none;
+					@media screen and (min-width: $large_mobile_size) {
+						width: 100px;
+					}
+
+					@media screen and (min-width: $desktop_size) {
+						width: 150px;
+					}
+				}
+
+				span.answer_text {
+					margin-left: 16px;
+					pointer-events: none;
+					text-align: left;
+
+					@media screen and (min-width: $desktop_size) {
+						text-align: center;
+						margin: 8px 0 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.current_answer {
+	animation: 0.3s ease-in-out 0s animate_mobile_current_answer forwards;
+}
+
+@keyframes animate_mobile_current_answer {
+	0% {
+		background: rgba(255, 255, 255, 0.4);
+		border-color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		background: rgba(255, 255, 255, 0);
+		border-color: rgba(255, 255, 255, 0);
+	}
+	100% {
+		background: rgba(255, 255, 255, 0.4);
+		border-color: rgba(255, 255, 255, 0.5);
+	}
+}

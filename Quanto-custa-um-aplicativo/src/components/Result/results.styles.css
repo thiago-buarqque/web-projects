@@ -1,0 +1,174 @@
+section#section_result {
+  width: 100%;
+  min-height: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 64px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+section#section_result div#result_header {
+  max-width: 960px;
+  padding: 16px !important;
+}
+
+section#section_result div#result_body {
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  padding-top: 16px;
+}
+
+section#section_result div#result_body h2#estimative_cost_label,
+section#section_result div#result_body h1#final_price {
+  font-family: "GothamRoundedBold";
+}
+
+section#section_result div#result_body span#result_section_label {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 680px) {
+  section#section_result div#result_body span#result_section_label {
+    font-size: 16px;
+  }
+}
+
+section#section_result div#result_body h2#estimative_cost_label {
+  font-size: 20px;
+  margin-top: 18px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 680px) {
+  section#section_result div#result_body h2#estimative_cost_label {
+    font-size: 32px;
+  }
+}
+
+section#section_result div#result_body h1#final_price {
+  font-size: 40px;
+  margin: 16px 0 24px 0;
+}
+
+@media screen and (min-width: 680px) {
+  section#section_result div#result_body h1#final_price {
+    font-size: 80px;
+  }
+}
+
+section#section_result div#result_body p#projects_announcement {
+  max-width: 960px;
+  line-height: 1.3;
+}
+
+section#section_result div#result_body p#projects_announcement a#our_projects {
+  color: #14e2cd;
+  text-decoration: none;
+}
+
+section#section_result div#result_body button.highlight_button {
+  width: 100%;
+  max-width: 250px;
+  padding: 1.5rem 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+  section#section_result div#result_body button.highlight_button {
+    max-width: 290px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  section#section_result div#result_body button.highlight_button {
+    max-width: 360px;
+    padding: 1.8rem 0;
+    font-size: 24px;
+  }
+}
+
+div#container_sharing_options {
+  margin-top: 24px;
+}
+
+div#container_sharing_options span#container_sharing_label {
+  font-family: "GothamRoundedBold";
+}
+
+@media screen and (min-width: 680px) {
+  div#container_sharing_options span#container_sharing_label {
+    font-size: 20px;
+  }
+}
+
+div#container_sharing_options div#container_sharing_buttons {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div#container_sharing_options div#container_sharing_buttons button.share_button {
+  margin: 0 5px;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div#container_sharing_options div#container_sharing_buttons button.share_button .social_brand {
+  width: 35px;
+  height: 35px;
+  padding: 10px 8px 10px 10px;
+}
+
+div#container_sharing_options div#container_sharing_buttons button.share_button span.share_button_label {
+  display: none;
+  padding-right: 10px;
+  color: #fff;
+}
+
+@media screen and (min-width: 680px) {
+  div#container_sharing_options div#container_sharing_buttons button.share_button span.share_button_label {
+    display: inline;
+  }
+}
+
+div#container_sharing_options div#container_sharing_buttons button#btn_share__facebook {
+  background: #3b5998;
+}
+
+div#container_sharing_options div#container_sharing_buttons button#btn_share__linkedin {
+  background: #007bb6;
+}
+
+div#container_sharing_options div#container_sharing_buttons button#btn_share__google_plus {
+  background: #dd4b39;
+}
+
+div#container_sharing_options div#container_sharing_buttons button#btn_share__twitter {
+  background: #00aced;
+}

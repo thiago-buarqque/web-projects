@@ -1,0 +1,120 @@
+@import "./sass/_mixins.scss";
+@import "./sass/variables.scss";
+
+#root {
+	width: 100%;
+	position: relative;
+}
+
+#footer {
+	width: 100%;
+
+	position: fixed;
+	bottom: 0px;
+	right: 0;
+
+	padding: 16px;
+
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #3d3935);
+
+	@include flex($align-items: center, $justify-content: flex-end);
+
+	> p {
+		margin: 0 10px 0 0;
+		font-size: 14px;
+	}
+	> svg {
+		width: 60px;
+	}
+}
+
+// Global classes
+
+.title {
+	margin: 0.3rem 0 0 0;
+}
+
+.mobile_container {
+	padding: 0 16px;
+}
+
+.blue_highlight {
+	color: $color_highlight_light_blue;
+}
+
+.highlight_button {
+	background-image: linear-gradient(to left, #7a56f4, $color_highlight_light_blue);
+
+	border-radius: 5px;
+
+	margin-top: 0.5em;
+
+	text-align: center;
+	font-family: "GothamRoundedBold";
+	color: #fff;
+	font-size: 20px;
+
+	position: relative;
+	overflow: hidden;
+
+	&:hover {
+		&::after {
+			content: "";
+			width: 20px;
+			height: 300px;
+			background: rgba($color: #fff, $alpha: 0.2);
+			transform: rotate(15deg);
+			position: absolute;
+			inset: -25px 0 0 0px;
+			z-index: 0;
+			animation: 0.6s ease-out 0s slide forwards;
+		}
+	}
+}
+
+@keyframes slide {
+	0% {
+		left: -20px;
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		left: calc(100% + 20px);
+	}
+}
+
+.hide_element {
+	display: none !important;
+}
+
+.fade_in {
+	animation: 0.2s ease-out 0s fadeIn forwards;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade_out {
+	animation: 0.1s ease-out 0s fadeOut forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.full_height_element {
+	height: 100% !important;
+}

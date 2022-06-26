@@ -1,0 +1,50 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 20% 40%;
+      grid-template-columns: 40% 20% 40%;
+  text-align: center;
+}
+
+@media screen and (min-width: var(--desktop_size)) {
+  .header {
+    padding: 32px;
+  }
+}
+
+.header button._btn_previous {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  color: #fff;
+}
+
+.header button._btn_previous > span {
+  font-size: 18px;
+  margin: 0;
+  line-height: 0;
+}
+
+.header span.current_question {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.header span.app_price {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.header span.current_question,
+.header span.app_price {
+  font-family: "GothamRoundedBold";
+}
+
+.hide_previous_question {
+  pointer-events: none !important;
+  opacity: 0 !important;
+}

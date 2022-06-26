@@ -1,0 +1,194 @@
+div#board_parent {
+    @media screen and (min-width: $desktop-screen-size) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+div#board {
+    width: 100%;
+
+    max-width: 600px;
+    max-height: 600px;
+    aspect-ratio: 1;
+
+    margin: 0 auto;
+
+    @media screen and (max-width: $old-screen-size) {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    @media screen and (min-width: $desktop-screen-size) {
+        margin: 0 32px 0 0;
+    }
+
+    display: grid;
+
+    // b -> block
+    // hl -> Horizontal line
+    // vl -> Vertical
+    grid-template-areas:
+        "b1 vl11 b2 vl21 b3"
+        "hl1 hl1 hl1 hl1 hl1"
+        "b4 vl12 b5 vl22 b6"
+        "hl2 hl2 hl2 hl2 hl2"
+        "b7 vl13 b8 vl23 b9";
+
+    grid-template-rows: minmax(0, 1fr) 16px minmax(0, 1fr) 16px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr) 16px minmax(0, 1fr);
+    align-items: center;
+
+    div.board_line {
+        background-color: var(--adaptable-main-color);
+        justify-self: center;
+        border-radius: 5px;
+
+        &.horizontal_line {
+            width: 100%;
+            height: 2px;
+        }
+
+        &:not(.horizontal_line) {
+            height: 100%;
+            width: 2px;
+        }
+    }
+
+    div.__block {
+        display: grid;
+        grid-template-areas:
+            "c1 c2 c3"
+            "c4 c5 c6"
+            "c7 c8 c9";
+
+        grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+        align-items: center;
+        justify-items: center;
+
+        column-gap: 8px;
+        row-gap: 8px;
+
+        @media screen and (max-width: $old-screen-size) {
+            column-gap: 4px;
+            row-gap: 4px;
+        }
+
+        @media screen and (min-width: $tablet-screen-size) {
+            column-gap: 12px;
+            row-gap: 12px;
+        }
+
+        div.__cell {
+            position: relative;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 0.0625rem solid var(--secondary-item-border);
+
+            aspect-ratio: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            max-width: 55px;
+            height: 100%;
+
+            cursor: pointer;
+            outline: none;
+            // Remove mobile blue highlight
+            -webkit-tap-highlight-color: transparent;
+
+            @media screen and (min-width: $desktop-screen-size) {
+                &:hover {
+                    background-color: rgba(217, 217, 217, 0.25);
+                }
+            }
+
+            &.__selected_cell,
+            &.__selected_cell:hover {
+                background-color: var(--main-color);
+                border: 0.0625rem solid var(--main-color);
+
+                span {
+                    color: var(--hightlighted-item-text-color);
+                }
+            }
+
+            &.__secondary_selected_cell,
+            &.__secondary_selected_cell:hover {
+                background-color: var(--board-secondary-highlighted-cell);
+                border: 0.0625rem solid var(--board-secondary-highlighted-cell);
+
+                transition: 0.15s cubic-bezier(0.39, 0.58, 0.57, 1);
+                transition-property: background, border;
+
+                span {
+                    color: var(--hightlighted-item-text-color);
+                }
+            }
+
+            &.__invalid_cell,
+            &.__invalid_cell:hover {
+                background-color: transparent;
+                border: 0.0625rem solid var(--secondary-item-border);
+                span {
+                    color: #cd484b;
+                }
+            }
+
+            &.__selected_cell.__invalid_cell{
+                background-color: #cd484b;
+                border: 0.0625rem solid #cd484b;
+                span {
+                    color: var(--hightlighted-item-text-color);
+                }
+            }
+
+            span {
+                pointer-events: none;
+                font-size: 24px;
+                line-height: 24px;
+                text-align: center;
+                width: 15px;
+                height: 24px;
+
+                @media screen and (max-width: $old-screen-size) {
+                    font-size: 18px;
+                }
+
+                @media screen and (min-width: $tablet-screen-size) {
+                    font-size: 28px;
+                }
+            }
+
+            div.__cell_notes {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                text-align: center;
+                padding: 0 4px;
+
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                pointer-events: none;
+
+                span {
+                    max-width: 33%;
+                    font-size: 12px;
+                    line-height: 10px;
+                    height: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

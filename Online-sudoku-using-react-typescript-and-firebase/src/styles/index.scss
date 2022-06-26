@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    color: var(--normal-text-color);
+    font-family: "Quicksand", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
+    transition: background 0.1s ease-in;
+
+    @include row_flex_center;
+}
+
+div#root {
+    width: inherit;
+    height: inherit;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    @include row_flex_center;
+}
+
+.__fade_in_page{
+    animation: fadeInPage 0.5s ease-in-out 0s forwards;
+}
+
+@keyframes fadeInPage {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

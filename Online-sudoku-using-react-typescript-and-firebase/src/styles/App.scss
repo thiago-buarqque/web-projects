@@ -1,0 +1,11 @@
+@import './_variables.scss';
+@import './mixins';
+@import './index.scss';
+
+@import '../pages/Home/homeStyles.scss';
+@import '../pages/Match/matchStyles.scss';
+
+@import '../components/Board/boardStyles.scss';
+@import '../components/BoardControls/boardControls.scss';
+@import '../components/Board/gameFinishStyles.scss';
+@import '../components/DifficultyChanger/difficultyChangerStyles.scss';

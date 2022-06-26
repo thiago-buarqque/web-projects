@@ -1,0 +1,178 @@
+div#board_controls {
+    max-width: 345px;
+    margin: 0 auto;
+
+    @media screen and (min-width: $tablet-screen-size) {
+        margin-top: 24px;
+    }
+
+    @media screen and (min-width: $desktop-screen-size) {
+        width: 100%;
+        height: 100%;
+        max-width: 380px;
+        margin: 0;
+        border-left: 1px solid var(--secondary-item-border);
+        padding-left: 32px;
+    }
+
+    div#__keypad {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: auto auto;
+        justify-content: center;
+
+        div.__keypad_cell {
+            width: 52px;
+            height: 52px;
+
+            margin: 16px 16px 0 0;
+
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 5px;
+            border: 1px solid var(--keypad-border-color);
+
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
+            @media screen and (max-width: $old-screen-size) {
+                width: 38px;
+                height: 38px;
+            }
+
+            @media screen and (max-width: $desktop-screen-size) {
+                &:active {
+                    background-color: rgba(217, 217, 217, 0.25);
+                }
+            }
+
+            @media screen and (min-width: $desktop-screen-size) {
+                width: 56px;
+                height: 56px;
+                &:hover {
+                    background-color: rgba(217, 217, 217, 0.25);
+                }
+            }
+
+            &:nth-child(5n) {
+                margin-right: 0;
+            }
+
+            span,
+            svg {
+                pointer-events: none;
+            }
+
+            span.__digit {
+                font-size: 28px;
+                line-height: 28px;
+
+                @media screen and (max-width: $old-screen-size) {
+                    font-size: 22px;
+                    line-height: 22px;
+                }
+            }
+
+            span.__remaining_digit {
+                font-size: 12px;
+                line-height: 12px;
+                text-align: center;
+
+                @media screen and (max-width: $old-screen-size) {
+                    font-size: 10px;
+                    line-height: 10px;
+                }
+            }
+
+            &:last-child {
+                svg * {
+                    fill: var(--normal-text-color);
+                }
+                @media screen and (max-width: $old-screen-size) {
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+    div#__controls {
+        // width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 24px;
+
+        @media screen and (max-width: $old-screen-size) {
+            margin-top: 8px;
+        }
+
+        button#dark_mode_switch {
+            width: 56px;
+            height: 56px;
+
+            @media screen and (max-width: $old-screen-size) {
+                width: 48px;
+                height: 48px;
+                svg {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+
+            svg {
+                pointer-events: none;
+            }
+
+            svg * {
+                stroke: var(--normal-text-color);
+            }
+        }
+
+        div#__game_controls {
+            display: flex;
+            align-items: center;
+
+            button.__control {
+                width: 56px;
+                height: 56px;
+
+                @media screen and (max-width: $old-screen-size) {
+                    width: 48px;
+                    height: 48px;
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    margin: 0 16px;
+                }
+
+                svg {
+                    pointer-events: none;
+                }
+
+                svg * {
+                    transition: all 0.2s ease-in-out;
+                    fill: transparent;
+                    stroke: var(--normal-text-color);
+                }
+            }
+        }
+    }
+}
+
+.__setting_user_notes path {
+    fill: var(--adaptable-main-color) !important;
+}
