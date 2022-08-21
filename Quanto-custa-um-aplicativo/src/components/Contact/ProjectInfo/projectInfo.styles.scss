@@ -1,0 +1,88 @@
+@import "../../../sass/_mixins.scss";
+@import "../../../sass/variables.scss";
+#project_info_container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: $desktop_size) {
+		background: #fff url(https://widgets.yeeply.com/1618934712/img/road.5171460b.svg) no-repeat center 80%;
+	}
+	p.user_needs_console_text {
+		@media screen and (min-width: $desktop_size) {
+			font-size: 18px;
+		}
+	}
+
+	img#_img_tree_woman {
+		@media screen and (min-width: $desktop_size) {
+			position: absolute;
+			bottom: 120px;
+			left: 20px;
+			width: 120px;
+		}
+	}
+
+	img#_img_tree_man {
+		@media screen and (min-width: $desktop_size) {
+			position: absolute;
+			top: 130px;
+			right: 20px;
+			width: 190px;
+		}
+	}
+
+	div#_project_info_content {
+		width: 100%;
+
+		@include flex($align-items: flex-start, $direction: column);
+
+		margin-top: 24px;
+
+		div._item_info {
+			width: 100%;
+			> h3._main_text {
+				font-size: 16px;
+			}
+
+			input#in_project_name {
+				width: 100%;
+			}
+
+			textarea#txt_area_project_requirements {
+				width: 100%;
+				max-width: 100%;
+				min-height: 100px;
+				max-height: 220px;
+
+				resize: vertical;
+			}
+		}
+	}
+	div#_next_button_container {
+		width: 100%;
+		height: 100%;
+		max-height: 250px;
+
+		@include flexCenter();
+
+		@media screen and (min-width: $desktop_size) {
+			max-height: 100px;
+		}
+
+		button#project_info_next_button {
+			width: 150px;
+
+			&:hover {
+				font-weight: 400;
+			}
+
+			@media screen and (min-width: $desktop_size) {
+				width: 190px;
+			}
+		}
+	}
+}

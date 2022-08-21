@@ -1,0 +1,123 @@
+@import "../../../sass/_mixins.scss";
+@import "../../../sass/variables.scss";
+div#client_company_info_container {
+	form {
+		div#company_type_container {
+			h3#company_type_title {
+				font-size: 16px;
+				@media screen and (min-width: $desktop_size) {
+					margin-top: 0;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+div#company_type_container {
+	div#__options {
+		width: 100%;
+
+		padding-top: 16px;
+
+		@include flex($align-items: flex-start, $justify-content: center, $wrap: wrap);
+
+		@media screen and (min-width: $desktop_size) {
+			padding-top: 0;
+		}
+
+		div.company_type {
+			width: 75px;
+
+			@include flex($align-items: center, $justify-content: center, $direction: column);
+
+			margin: 0 16px 16px 16px;
+			cursor: pointer;
+
+			@media screen and (min-width: $desktop_size) {
+				margin: 0 0 12px 0px;
+				width: 120px;
+			}
+
+			button.btn__select_company_type {
+				width: 75px;
+				height: 75px;
+
+				@include flex($align-items: flex-end, $justify-content: flex-end);
+
+				background: #f3f5f9;
+				box-shadow: 0 2px 5px 0 rgba(74, 144, 226, 0.36);
+
+				padding: 0px 2px 0 2px;
+				position: relative;
+
+				border-radius: 5px;
+
+				pointer-events: none;
+
+				@media screen and (min-width: $large_mobile_size) {
+					width: 80px;
+					height: 80px;
+				}
+
+				@media screen and (min-width: $desktop_size) {
+					width: 90px;
+					height: 90px;
+				}
+
+				div {
+					width: 100%;
+					height: 100%;
+
+					background-position: bottom;
+					background-size: 80%;
+					background-repeat: no-repeat;
+
+					pointer-events: none;
+				}
+			}
+
+			span {
+				font-weight: 300;
+				text-transform: uppercase;
+				color: #415b5c;
+				font-size: 9px;
+				text-align: center;
+				margin-top: 4px;
+				cursor: text !important;
+
+				@media screen and (min-width: $large_mobile_size) {
+					font-size: 11px;
+				}
+			}
+		}
+
+		div.company_type:nth-child(4) {
+			@media screen and (max-width: $large_mobile_size) {
+				margin-left: 0;
+			}
+			button.btn__select_company_type {
+				div {
+					background-size: 68%;
+				}
+			}
+		}
+		div.company_type:nth-child(odd) {
+			@media screen and (max-width: $large_mobile_size) {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.active_company_type {
+	button {
+		box-shadow: inset 0 1px 6px 0 rgba(74, 144, 226, 0.3) !important;
+		background-color: #d7e5f6 !important;
+	}
+
+	span {
+		font-weight: 500 !important;
+	}
+}

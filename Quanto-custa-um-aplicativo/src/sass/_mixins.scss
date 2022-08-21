@@ -1,0 +1,33 @@
+@mixin flex(
+	$align-items: stretch,
+	$justify-content: flex-start,
+	$align-content: normal,
+	$direction: row,
+	$wrap: nowrap
+) {
+	display: flex;
+	@if $direction != row {
+		flex-direction: $direction;
+	}
+	@if $align-items != stretch {
+		align-items: $align-items;
+	}
+	@if $justify-content != flex-start {
+		justify-content: $justify-content;
+	}
+	@if $align-content != normal {
+		align-content: $align-content;
+	}
+	@if $wrap != nowrap {
+		flex-wrap: $wrap;
+	}
+}
+
+@mixin flexCenter($direction: row) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@if $direction != row {
+		flex-direction: $direction;
+	}
+}

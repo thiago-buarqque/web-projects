@@ -1,0 +1,12 @@
+.show_description {
+	height: auto !important;
+}
+
+.size_focus {
+	background: var(--highlight-color) !important;
+	color: #fff !important;
+}
+
+.color_focus {
+	border: 2px solid var(--highlight-color) !important;
+}

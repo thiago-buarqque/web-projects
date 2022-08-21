@@ -1,0 +1,41 @@
+@import "./sass/_mixins.scss";
+@import "./sass/variables.scss";
+* {
+	box-sizing: border-box;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+
+	font-family: "GothamRoundedBook", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background-color: $background-color;
+	color: #fff;
+
+	font-weight: 300;
+
+	@include flexCenter();
+}
+
+button,
+input,
+textarea {
+	border: none;
+	padding: 0;
+	background: none;
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+}

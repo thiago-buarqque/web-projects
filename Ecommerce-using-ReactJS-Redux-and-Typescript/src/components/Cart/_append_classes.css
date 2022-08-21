@@ -1,0 +1,14 @@
+.hide_cart {
+	pointer-events: none !important;
+	background-color: transparent !important;
+}
+
+.hide_cart #cart {
+	margin-right: -600px !important;
+}
+
+@media screen and(min-width: 1024px) {
+	.hide_cart {
+		margin-right: -600px !important;
+	}
+}

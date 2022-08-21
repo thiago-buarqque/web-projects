@@ -1,0 +1,89 @@
+@import "../../../sass/_mixins.scss";
+@import "../../../sass/variables.scss";
+
+div#container_edit_questions {
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+
+	position: relative;
+
+	button#edit_answers_label {
+		cursor: pointer;
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	div#_answered_questions {
+		width: 100%;
+		max-width: 520px;
+		height: 0;
+		margin: 0 auto;
+
+		overflow: hidden;
+		transition: height 0.5s ease-in;
+
+		padding: 0 16px;
+		background: #fff;
+		margin-top: 16px;
+
+		display: flex;
+		flex-direction: column;
+
+		border-radius: 5px;
+
+		div._question {
+			color: $background-color;
+
+			@include flex($align-items: center, $justify-content: flex-start);
+
+			border-bottom: 1px solid #cccccc;
+
+			padding: 16px 0;
+
+			@media screen and (min-width: $desktop_size) {
+				padding: 16px;
+			}
+
+			div._img_container {
+				@include flexCenter();
+
+				margin-right: 16px;
+				img {
+					width: 60px;
+					height: 60px;
+				}
+			}
+		}
+
+		div._answer {
+			span {
+				display: block;
+				text-align: left;
+			}
+
+			span._title {
+				font-size: 14px;
+			}
+
+			span._current_answer {
+				font-family: "GothamRoundedBold";
+				line-height: 1.4;
+				margin-top: 4px;
+
+				button._btn_change_answer {
+					font-size: 14px;
+					color: #7a56f4;
+					cursor: pointer;
+					font-family: "GothamRoundedBook";
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
+
+.grow_element {
+	height: 100% !important;
+	transition: height 0.5s ease-out !important;
+}

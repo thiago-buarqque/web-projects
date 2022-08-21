@@ -1,0 +1,4 @@
+.hide_searcher_suggestions {
+	opacity: 0 !important;
+	pointer-events: none !important;
+}

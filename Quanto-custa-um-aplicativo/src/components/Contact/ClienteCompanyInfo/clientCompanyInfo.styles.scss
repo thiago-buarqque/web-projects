@@ -1,0 +1,147 @@
+@import "../../../sass/_mixins.scss";
+@import "../../../sass/variables.scss";
+
+div#client_company_info_container {
+	@include flex($direction: column);
+	height: 100%;
+	overflow-y: auto;
+
+	img#_img_window_woman,
+	img#_img_window_man {
+		@media screen and (min-width: $desktop_size) {
+			position: absolute;
+			top: -50px;
+		}
+	}
+
+	img#_img_window_woman {
+		@media screen and (min-width: $desktop_size) {
+			right: 30px;
+			width: 140px;
+		}
+	}
+
+	img#_img_window_man {
+		@media screen and (min-width: $desktop_size) {
+			left: 30px;
+			width: 130px;
+		}
+	}
+
+	div#scroll_container {
+		@media screen and (min-width: $desktop_size) {
+			overflow-y: auto;
+			max-height: 90%;
+			margin-top: 8%;
+		}
+	}
+
+	div.screen_content {
+		width: 100%;
+		// height: 100%;
+
+		@media screen and (min-width: $desktop_size) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+
+div#client_company_info_container {
+	div#__company_info_body {
+		padding-top: 16px;
+
+		@media screen and (min-width: $desktop_size) {
+			padding-bottom: 50px;
+		}
+
+		div#form_footer {
+			width: 100%;
+
+			@include flexCenter($direction: column);
+
+			div#_term_and_conditions {
+				width: 100%;
+				text-align: center;
+
+				div#_container_terms_and_conditions_message {
+					@include flex($align-items: flex-start, $justify-content: center);
+
+					margin-bottom: 8px;
+
+					div#checkbox_container {
+						width: 18px;
+						height: 18px;
+
+						border: 1px solid #d9d9d9;
+						border-radius: 2px;
+
+						margin-right: 8px;
+
+						position: relative;
+
+						cursor: pointer;
+
+						&:hover {
+							background: #d9d9d9;
+						}
+
+						input[type="checkbox"] {
+							opacity: 0;
+							width: 18px;
+							height: 18px;
+
+							pointer-events: none;
+						}
+					}
+
+					span {
+						font-size: 12px;
+						color: #415b5c;
+						font-style: italic;
+						margin-top: 2px;
+
+						a {
+							color: #415b5c;
+							text-decoration: none;
+							font-weight: 500;
+							font-style: italic;
+
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+
+			button#btn_submit_form {
+				width: 130px;
+				height: 40px;
+				margin-top: 24px;
+
+				@media screen and (min-width: $desktop_size) {
+					width: 180px;
+					margin-top: 4px;
+				}
+			}
+		}
+	}
+}
+
+@import "./formFields.styles.scss";
+@import "./clientCompanyType.styles.scss";
+
+.__checkbox_checked {
+	background: $color_highlight_medium_blue !important;
+
+	&::after {
+		content: "✔";
+		color: #fff;
+		position: absolute;
+		top: 1px;
+		left: 2px;
+		transform: rotate(20deg);
+		font-size: 12px;
+	}
+}

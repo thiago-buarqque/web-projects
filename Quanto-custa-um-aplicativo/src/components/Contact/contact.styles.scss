@@ -1,0 +1,268 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/variables.scss";
+
+#contact_container {
+	z-index: 4;
+	width: 100%;
+	height: 100%;
+
+	position: fixed;
+	left: 0;
+	bottom: 0;
+
+	padding: 50px 10px 8px 10px;
+
+	@include flex($justify-content: center);
+
+	transition: transform 0.6s ease-in 0.1s !important;
+
+	background: rgba(0, 0, 0, 0.2);
+
+	font-family: "Montserrat", "GothamRoundedBook", sans-serif !important;
+
+	@media screen and (min-width: $large_mobile_size) {
+		padding: 50px 24px 8px 24px;
+	}
+
+	@media screen and (min-width: $desktop_size) {
+		div#close_btn_parent {
+			position: relative;
+		}
+	}
+
+	div#close_btn_parent {
+		width: 100%;
+		max-width: 1150px;
+		height: 100%;
+		max-height: 790px;
+		background: #fff;
+		border-radius: 5px;
+
+		animation-duration: 0.2s !important;
+	}
+
+	button#btn_close_contact_container {
+		width: 30px;
+		height: 30px;
+		background: #fff;
+		color: $color_highlight_medium_blue;
+
+		position: absolute;
+		top: 16px;
+		right: 8px;
+
+		z-index: 2;
+		border-radius: 50%;
+
+		@include flexCenter();
+
+		@media screen and (min-width: $desktop_size) {
+			width: 34px;
+			height: 34px;
+			right: 16px;
+			box-shadow: 0 2px 10px 0 rgba(74, 144, 226, 0.36);
+		}
+
+		span {
+			font-size: 28px;
+			font-weight: 400;
+			text-align: center;
+			transform: scaleY(0.85);
+			pointer-events: none;
+			@media screen and (min-width: $desktop_size) {
+				font-weight: 300;
+				font-size: 30px;
+				margin-top: -6px;
+			}
+		}
+	}
+
+	div#__body {
+		width: 100%;
+		max-width: 1150px;
+		height: 100%;
+		max-height: 790px;
+		background: #fff;
+		border-radius: 5px;
+
+		overflow: hidden;
+
+		padding: 8px 20px;
+
+		@media screen and (min-width: $desktop_size) {
+			position: relative;
+			padding: 0;
+		}
+
+		transform: translateX(0px);
+
+		div#__content {
+			width: 700%;
+			height: calc(100% - 50px);
+
+			padding-bottom: 40px;
+
+			@include flex($align-items: center, $justify-content: space-between);
+
+			transform: translateX(0px);
+
+			transition: transform 1s ease-out 0s !important;
+
+			@media screen and (min-width: $desktop_size) {
+				padding-bottom: 0px;
+			}
+		}
+	}
+}
+
+.hide_dot {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.disabled_dot {
+	img {
+		display: none;
+	}
+	img#disabled_forward_arrow {
+		display: block !important;
+	}
+}
+
+.remove_dot_background {
+	background-color: transparent !important;
+	box-shadow: inset 0 1px 10px 0 rgba(74, 144, 226, 0.36) !important;
+}
+
+.contact_screen {
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+	z-index: 2;
+
+	position: relative;
+}
+
+.screen_content {
+	width: 100%;
+	max-width: 540px;
+	margin: 0 auto;
+	height: calc(100% - 50px);
+
+	@media screen and (min-width: $desktop_size) {
+		padding: 120px 0 40px 0;
+		max-width: 670px;
+	}
+}
+
+.form_screen_title {
+	font-size: 18px;
+	text-align: center;
+	color: #415b5c;
+	font-weight: 400;
+	margin-left: 8px;
+	margin-right: 8px;
+
+	@media screen and (min-width: $large_mobile_size) {
+		font-size: 27px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media screen and (min-width: $desktop_size) {
+		margin-top: 36px;
+
+		width: 100%;
+		max-width: 75%;
+		margin-left: 1rem;
+		margin-right: 1rem;
+
+		position: absolute;
+		top: 0px;
+		left: 12%;
+	}
+}
+
+._main_text {
+	color: $color_highlight_medium_blue;
+	font-weight: 400;
+	@media screen and (min-width: $desktop_size) {
+		font-size: 18px !important;
+	}
+}
+
+.user_needs_console_text {
+	font-size: 16px;
+	line-height: 22px;
+	color: #415b5c;
+	margin: 8px 0 20px 0;
+
+	span.animated_text_option {
+		font-weight: 500;
+	}
+}
+
+.contact_button {
+	height: 40px;
+	background: #f3f5f9;
+	box-shadow: 0 0 20px 0 rgba(74, 144, 226, 0.3);
+
+	margin: 8px;
+
+	text-align: center;
+	font-weight: 300;
+	font-size: 14px;
+	color: #403f4c;
+
+	font-family: "Montserrat", sans-serif;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&:hover {
+		font-weight: 500;
+	}
+
+	@media screen and (min-width: $large_mobile_size) {
+		font-size: 16px;
+	}
+
+	@media screen and (min-width: $desktop_size) {
+		font-size: 18px;
+		height: 50px !important;
+	}
+}
+
+.form_field {
+	font-size: 14px;
+	font-weight: 300;
+	color: #3b484f;
+
+	border-bottom: 1px solid #979797;
+	padding-bottom: 2px;
+
+	&::placeholder {
+		color: #b5b5b5;
+		font-size: 16px;
+		font-style: italic;
+	}
+
+	@media screen and (min-width: $desktop_size) {
+		font-size: 16px;
+	}
+}
+
+.error {
+	font-size: 11px;
+	color: #f45b69;
+	margin-top: 8px;
+
+	font-style: italic;
+}
+
+.field_error {
+	border-bottom: 2px solid #d91616 !important;
+}
+
+@import "./controls.styles.scss";

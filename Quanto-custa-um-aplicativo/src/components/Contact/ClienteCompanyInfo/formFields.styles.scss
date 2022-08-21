@@ -1,0 +1,166 @@
+@import "../../../sass/_mixins.scss";
+@import "../../../sass/variables.scss";
+
+div#client_company_info_container {
+	form {
+		width: 100%;
+		div#form_fields {
+			@media screen and (min-width: $large_mobile_size) {
+				display: grid;
+				grid-template-columns: calc(50% - 18px) calc(50% - 18px);
+				column-gap: 36px;
+			}
+			div._form_item {
+				margin: 16px 0;
+
+				@include flex($justify-content: flex-start, $direction: column);
+
+				@media screen and (min-width: $desktop_size) {
+					margin: 4px 0 0 0;
+					height: 94px;
+				}
+
+				.form_field {
+					padding-top: 16px;
+				}
+			}
+		}
+	}
+}
+
+div#form_fields {
+	div#field__phone_number {
+		div#phone_number_content {
+			width: 100%;
+
+			@include flex(
+				$align-items: center !important,
+				$justify-content: flex-start!important,
+				$direction: row !important
+			);
+
+			div#countries_flags {
+				cursor: pointer;
+
+				display: flex;
+				align-items: center;
+
+				margin: 16px 8px 0 8px;
+
+				img {
+					width: 20px;
+				}
+				span {
+					color: #666;
+					transform: scaleY(0.5);
+					margin-left: 4px;
+				}
+			}
+			.form_field {
+				width: 100%;
+			}
+		}
+	}
+}
+
+div#form_fields {
+	div#select_job_position {
+		margin-bottom: 8px;
+		span#required_field {
+			font-size: 12px !important;
+			margin-top: 16px;
+
+			@media screen and (min-width: $desktop_size) {
+				font-size: 14px;
+			}
+		}
+		div.select {
+			z-index: 2;
+			cursor: pointer;
+			position: relative;
+			width: 100%;
+			margin-top: 16px;
+
+			height: 22px;
+
+			border-bottom: 2px solid #d9d9d9;
+
+			div._current_option {
+				width: 100%;
+				color: #333;
+
+				position: relative;
+
+				@include flex($align-items: center, $justify-content: space-between);
+
+				div#option_container {
+					width: 100%;
+					height: 100%;
+					position: relative;
+
+					transition: all 0.1s ease-in;
+					input[type="text"] {
+						width: 100%;
+						padding: 0;
+						border-bottom: 0;
+						pointer-events: none;
+						font-size: 16px !important;
+					}
+				}
+
+				span#_dropdown_symbol {
+					transform: scaleY(0.5) !important;
+					font-size: 14px;
+					opacity: 0.8;
+				}
+			}
+			div._options {
+				opacity: 0;
+				width: 100%;
+
+				transition: opacity 0.1s ease-in;
+
+				pointer-events: none;
+
+				border: 1px solid #d9d9d9;
+				border-top: 1px solid transparent !important;
+				padding: 4px 0;
+
+				background: #fff;
+
+				position: absolute;
+				top: 100%;
+				left: 0;
+
+				div._option {
+					padding: 8px 16px;
+					color: #333;
+
+					&:hover {
+						background: $color_highlight_medium_blue;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.opened_dropdown_current_option {
+	span {
+		opacity: 0.45 !important;
+	}
+	div._options {
+		opacity: 1 !important;
+		pointer-events: all !important;
+	}
+	&::after {
+		content: "";
+		width: calc(100% - 16px);
+		height: 1px;
+		background: $color_highlight_medium_blue;
+		position: absolute;
+		bottom: 0;
+		opacity: 1 !important;
+	}
+}

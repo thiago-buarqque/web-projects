@@ -1,0 +1,41 @@
+div#__difficulty_changer {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+
+    button.__btn_difficulty_changer {
+        position: absolute;
+        top: 0;
+        padding: 8px;
+
+        z-index: 2;
+
+        background-color: var(--bg-color);
+        transition: background 0.1s ease-in;
+
+        &#__prev_diff {
+            left: 0;
+        }
+
+        &#__next_diff {
+            right: 0;
+        }
+
+        svg path {
+            stroke: var(--adaptable-main-color);
+        }
+    }
+
+    div#__difficulty {
+        display: grid;
+        grid-template-columns: 100% 100% 100% 100% 100%;
+        padding: 8px 0;
+
+        transition: transform 0.25s ease-in-out;
+
+        span.__difficulty {
+            width: 100%;
+            display: inline-block;
+        }
+    }
+}

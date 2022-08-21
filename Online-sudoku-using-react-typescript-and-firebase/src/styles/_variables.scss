@@ -1,0 +1,30 @@
+$tablet-screen-size: 720px;
+$desktop-screen-size: 1024px;
+$old-screen-size: 380px;
+
+:root {
+    --hightlighted-item-text-color: #FFFFFF;
+    --board-secondary-highlighted-cell: #92849A;
+    
+    --bg-color: #eceff7;
+    --main-color: #70587C;
+    --adaptable-main-color: #70587C;
+    --main-color-white-adaptative: #70587c;
+    --normal-text-color: #3e3c3f;
+    --main-item-border: #eceff7;
+    --secondary-item-border: #d9d9d9;
+
+    --keypad-border-color: #c1c1c1;
+}
+
+[data-theme="dark"] {
+    --bg-color: #3e3c3f;
+    --main-color: #70587c;
+    --adaptable-main-color: #AD91BD;
+    --main-color-white-adaptative: #f1f1f1;
+    --normal-text-color: #d9d9d9;
+    --main-item-border: #a5a5a5;
+    --secondary-item-border: #626262;
+
+    --keypad-border-color: #a5a5a5;
+}

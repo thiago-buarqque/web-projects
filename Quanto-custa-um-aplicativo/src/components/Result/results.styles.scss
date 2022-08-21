@@ -1,0 +1,135 @@
+@import "../../sass/_mixins.scss";
+@import "../../sass/variables.scss";
+
+section#section_result {
+	width: 100%;
+	min-height: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+
+	padding-bottom: 64px;
+
+	position: relative;
+
+	@include flexCenter();
+
+	text-align: center;
+
+	div#result_header {
+		max-width: 960px;
+		padding: 16px !important;
+	}
+
+	div#result_body {
+		transition: all 0.5s ease-in;
+		padding-top: 16px;
+		h2#estimative_cost_label,
+		h1#final_price {
+			font-family: "GothamRoundedBold";
+		}
+
+		span#result_section_label {
+			font-size: 14px;
+			@media screen and (min-width: $large_mobile_size) {
+				font-size: 16px;
+			}
+		}
+
+		h2#estimative_cost_label {
+			font-size: 20px;
+			margin-top: 18px;
+			margin-bottom: 16px;
+			@media screen and (min-width: $large_mobile_size) {
+				font-size: 32px;
+			}
+		}
+
+		h1#final_price {
+			font-size: 40px;
+			margin: 16px 0 24px 0;
+			@media screen and (min-width: $large_mobile_size) {
+				font-size: 80px;
+			}
+		}
+
+		p#projects_announcement {
+			max-width: 960px;
+			line-height: 1.3;
+			a#our_projects {
+				color: $color_highlight_light_blue;
+				text-decoration: none;
+			}
+		}
+
+		button.highlight_button {
+			width: 100%;
+			max-width: 250px;
+			padding: 1.5rem 0;
+
+			text-align: center;
+
+			cursor: pointer;
+
+			@media screen and (min-width: $medium_mobile_size) {
+				max-width: 290px;
+			}
+			@media screen and (min-width: $large_mobile_size) {
+				max-width: 360px;
+				padding: 1.8rem 0;
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+div#container_sharing_options {
+	margin-top: 24px;
+
+	span#container_sharing_label {
+		font-family: "GothamRoundedBold";
+		@media screen and (min-width: $large_mobile_size) {
+			font-size: 20px;
+		}
+	}
+
+	div#container_sharing_buttons {
+		margin-top: 16px;
+
+		@include flexCenter();
+
+		button.share_button {
+			margin: 0 5px;
+			border-radius: 3px;
+
+			@include flexCenter();
+
+			.social_brand {
+				width: 35px;
+				height: 35px;
+				padding: 10px 8px 10px 10px;
+			}
+
+			span.share_button_label {
+				display: none;
+				padding-right: 10px;
+				color: #fff;
+				@media screen and (min-width: $large_mobile_size) {
+					display: inline;
+				}
+			}
+		}
+
+		button#btn_share__facebook {
+			background: #3b5998;
+		}
+		button#btn_share__linkedin {
+			background: #007bb6;
+		}
+		button#btn_share__google_plus {
+			background: #dd4b39;
+		}
+		button#btn_share__twitter {
+			background: #00aced;
+		}
+	}
+}
